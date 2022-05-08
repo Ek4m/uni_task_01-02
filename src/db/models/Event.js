@@ -15,7 +15,6 @@ const Event = connection.define(
     },
     endDate: {
       type: DataTypes.DATE,
-      allowNull: false,
     },
     price: {
       type: DataTypes.INTEGER,
@@ -23,7 +22,7 @@ const Event = connection.define(
     },
     status: {
       type: DataTypes.ENUM,
-      values: ["ongoing", "penging", "finished", "cancelled"],
+      values: ["ongoing", "pending", "finished", "cancelled"],
       allowNull: false,
     },
   },

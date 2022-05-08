@@ -19,19 +19,19 @@
       <input type="number" required id="price" name="price" />
     </div>
     <div class="form-group">
-      <label for="price">Status</label>
-      <select name="status" id="">
-        <option value="penging">penging</option>
+      <label for="status">Status</label>
+      <select name="status" id="status">
+        <option value="pending">pending</option>
         <option value="ongoing">ongoing</option>
         <option value="finished">finished</option>
         <option value="cancelled">cancelled</option>
       </select>
     </div>
     <div class="form-group">
-      <label for="price">Wagon</label>
-      <select name="wagonId" id="">
+      <label for="wagonId">Wagon</label>
+      <select name="wagonId" id="wagonId">
         <%wagons.length && wagons.forEach(elem => {%>
-        <option value="<%=elem.name%>"><%=elem.name%></option>
+        <option value="<%=elem.id%>"><%=elem.name%></option>
         <%})%>
       </select>
     </div>
@@ -39,7 +39,7 @@
       <label for="price">Warehouse</label>
       <select name="warehouseId" id="">
         <%warehouses.length && warehouses.forEach(elem => {%>
-        <option value="<%=elem.name%>"><%=elem.name%></option>
+        <option value="<%=elem.id%>"><%=elem.name%></option>
         <%})%>
       </select>
     </div>

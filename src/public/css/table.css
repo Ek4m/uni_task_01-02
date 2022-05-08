@@ -48,7 +48,26 @@ td {
   font-weight: lighter;
   text-align: left;
 }
-
+.status p {
+  color: white;
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.status_cancelled p {
+  background-color: red;
+}
+.status_finished p {
+  background-color: rgb(0, 222, 33);
+}
+.status_pending p {
+  background-color: rgb(255, 194, 24);
+}
+.status_ongoing p {
+  background-color: rgb(0, 187, 156);
+}
 td {
   border-bottom: 1px solid rgb(205, 205, 205);
 }
