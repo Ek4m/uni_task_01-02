@@ -10,3 +10,9 @@ exports.getAllWarehouses = async (req, res, next) => {
     next(e);
   }
 };
+
+exports.getAddNewWarehouse = (req, res) => {
+  res.render("pages/addwarehouse", {
+    title: "New warehouse",
+  });
+};

@@ -13,11 +13,11 @@ const WarehouseModel = connection.define(
       allowNull: true,
     },
     opensIn: {
-      type: DataTypes.DATE,
+      type: DataTypes.TIME,
       allowNull: false,
     },
     closesIn: {
-      type: DataTypes.DATE,
+      type: DataTypes.TIME,
       allowNull: false,
     },
     price: {
