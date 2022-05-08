@@ -1,8 +1,8 @@
 <%- include("../partials/metas")%> <%- include("../partials/header")%>
 <main>
   <div class="table_container">
-    <h1>List of Engine Types</h1>
-    <a href="/engine-types/add"><button>Add engine type</button></a>
+    <h1>List of warehouses</h1>
+    <a href="/warehouses/add"><button>Add warehouse</button></a>
   </div>
   <% if(data.length > 0){%>
   <table>
@@ -20,13 +20,13 @@
         <td><%=elem.name%></td>
         <td><%=new Date(elem.createdAt)%></td>
         <td><%=new Date(elem.updatedAt)%></td>
-        <td><a href="/engine-types/delete?id=<%=elem.id%>">Delete</a></td>
+        <td><a href="/warehouses/delete?id=<%=elem.id%>">Delete</a></td>
       </tr>
       <% })%>
     </tbody>
   </table>
   <% }else{%>
-  <h1 class="no_elem">No Engine Type</h1>
+  <h1 class="no_elem">No Warehouses</h1>
   <% }%>
 </main>
 <%- include("../partials/footer")%>
