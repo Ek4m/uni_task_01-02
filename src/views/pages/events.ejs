@@ -1,0 +1,32 @@
+<%- include("../partials/metas")%> <%- include("../partials/header")%>
+<main>
+  <div class="table_container">
+    <h1>List of events</h1>
+    <a href="/events/add"><button>Add event</button></a>
+  </div>
+  <% if(data.length > 0){%>
+  <table>
+    <thead>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Created At</th>
+      <th>Updated At</th>
+      <th>Options</th>
+    </thead>
+    <tbody>
+      <%data.forEach((elem) => {%>
+      <tr>
+        <td><%=elem.id%></td>
+        <td><%=elem.name%></td>
+        <td><%=new Date(elem.createdAt)%></td>
+        <td><%=new Date(elem.updatedAt)%></td>
+        <td><a href="/events/delete?id=<%=elem.id%>">Delete</a></td>
+      </tr>
+      <% })%>
+    </tbody>
+  </table>
+  <% }else{%>
+  <h1 class="no_elem">No Events</h1>
+  <% }%>
+</main>
+<%- include("../partials/footer")%>

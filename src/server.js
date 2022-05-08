@@ -3,6 +3,7 @@ const WagonTypeRouter = require("./routes/WagonType");
 const WagonRouter = require("./routes/Wagon");
 const TrainRouter = require("./routes/Train");
 const WarehouseRouter = require("./routes/Warehouse");
+const EventRouter = require("./routes/Event");
 const EngnieTypeRouter = require("./routes/EngineType");
 const dataBase = require("./db/initDb");
 const path = require("path");
@@ -19,6 +20,7 @@ app.use("/wagon-types", WagonTypeRouter);
 app.use("/wagons", WagonRouter);
 app.use("/engine-types", EngnieTypeRouter);
 app.use("/warehouses", WarehouseRouter);
+app.use("/events", EventRouter);
 app.use("/trains", TrainRouter);
 
 /////////////////////Initialization

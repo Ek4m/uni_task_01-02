@@ -2,14 +2,10 @@ const connection = require("../initDb");
 const { DataTypes } = require("sequelize");
 const Wagon = require("./Wagon");
 const Warehouse = require("./Warehouse");
-const HistoryModel = connection.define(
+const Event = connection.define(
   "event",
   {
     name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    location: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -26,7 +22,8 @@ const HistoryModel = connection.define(
       allowNull: false,
     },
     status: {
-      type: DataTypes.STRING,
+      type: DataTypes.ENUM,
+      values: ["ongoing", "penging", "finished", "cancelled"],
       allowNull: false,
     },
   },
@@ -35,7 +32,7 @@ const HistoryModel = connection.define(
   }
 );
 
-HistoryModel.belongsTo(Wagon, { foreignKey: "wagonId" });
-HistoryModel.belongsTo(Warehouse, { foreignKey: "warehouseId" });
-HistoryModel.sync({ alter: true });
-module.exports = HistoryModel;
+Event.belongsTo(Wagon, { foreignKey: "wagonId" });
+Event.belongsTo(Warehouse, { foreignKey: "warehouseId" });
+Event.sync({ alter: true });
+module.exports = Event;

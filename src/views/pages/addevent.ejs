@@ -1,0 +1,49 @@
+<%- include("../partials/metas")%> <%- include("../partials/header")%>
+<main>
+  <form action="/events/add" method="post">
+    <h1>Add Event</h1>
+    <div class="form-group">
+      <label for="name">Description</label>
+      <input type="text" required id="name" name="name" />
+    </div>
+    <div class="form-group">
+      <label for="startDate">Started</label>
+      <input type="date" required id="startDate" name="startDate" />
+    </div>
+    <div class="form-group">
+      <label for="endDate">Finished</label>
+      <input type="date" required id="endDate" name="endDate" />
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="number" required id="price" name="price" />
+    </div>
+    <div class="form-group">
+      <label for="price">Status</label>
+      <select name="status" id="">
+        <option value="penging">penging</option>
+        <option value="ongoing">ongoing</option>
+        <option value="finished">finished</option>
+        <option value="cancelled">cancelled</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="price">Wagon</label>
+      <select name="wagonId" id="">
+        <%wagons.length && wagons.forEach(elem => {%>
+        <option value="<%=elem.name%>"><%=elem.name%></option>
+        <%})%>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="price">Warehouse</label>
+      <select name="warehouseId" id="">
+        <%warehouses.length && warehouses.forEach(elem => {%>
+        <option value="<%=elem.name%>"><%=elem.name%></option>
+        <%})%>
+      </select>
+    </div>
+    <button id="submit">Submit</button>
+  </form>
+</main>
+<%- include("../partials/footer")%>
