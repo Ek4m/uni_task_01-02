@@ -9,6 +9,11 @@
     <thead>
       <th>Id</th>
       <th>Name</th>
+      <th>Location</th>
+      <th>Opens At</th>
+      <th>Closes At</th>
+      <th>Capacity</th>
+      <th>Price</th>
       <th>Created At</th>
       <th>Updated At</th>
       <th>Options</th>
@@ -18,6 +23,11 @@
       <tr>
         <td><%=elem.id%></td>
         <td><%=elem.name%></td>
+        <td><%=elem.location%></td>
+        <td><%=elem.opensIn%></td>
+        <td><%=elem.closesIn%></td>
+        <td><%=elem.capacity%></td>
+        <td><%=elem.price%></td>
         <td><%=new Date(elem.createdAt)%></td>
         <td><%=new Date(elem.updatedAt)%></td>
         <td><a href="/warehouses/delete?id=<%=elem.id%>">Delete</a></td>

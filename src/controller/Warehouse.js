@@ -16,3 +16,25 @@ exports.getAddNewWarehouse = (req, res) => {
     title: "New warehouse",
   });
 };
+
+exports.postAddNewWarehouse = async (req, res, next) => {
+  try {
+    const newWarehouse = Warehouses.build(req.body);
+    await newWarehouse.validate();
+    await newWarehouse.save();
+    res.redirect("/warehouses");
+  } catch (e) {
+    next(e);
+  }
+};
+
+exports.deleteWarehouse = async (req, res, next) => {
+  try {
+    if (req.query.id) {
+      await Warehouses.destroy({ where: { id: req.query.id } });
+    }
+    res.redirect("/warehouses");
+  } catch (e) {
+    res.status(500).json(e);
+  }
+};
