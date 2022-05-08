@@ -20,6 +20,6 @@ const WagonModel = connection.define(
   }
 );
 WagonModel.belongsTo(WagonTypeModel, { foreignKey: "wagonType" });
-// WagonModel.belongsTo(TrainModel,{foreignKey:"trainId"})
+WagonModel.belongsTo(TrainModel,{foreignKey:"trainId"})
 WagonModel.sync({ alter: true });
 module.exports = WagonModel;

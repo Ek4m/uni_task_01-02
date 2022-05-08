@@ -11,9 +11,17 @@
       <input type="date" required id="duration" name="duration" />
     </div>
     <div class="form-group">
-      <label for="duration">Wagon Type</label>
+      <label for="wagonType">Wagon Type</label>
       <select required name="wagonType">
         <%wagonTypes.length && wagonTypes.forEach(elem => {%>
+        <option value="<%=elem.id%>"><%=elem.name%></option>
+        <%})%>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="trainId">Train</label>
+      <select required name="trainId">
+        <%trains.length && trains.forEach(elem => {%>
         <option value="<%=elem.id%>"><%=elem.name%></option>
         <%})%>
       </select>

@@ -1,3 +1,4 @@
+const TrainModel = require("../db/models/Train");
 const Wagons = require("../db/models/Wagon");
 const WagonTypeModel = require("../db/models/WagonType");
 
@@ -7,6 +8,9 @@ exports.getWagons = async (req, res, next) => {
       include: [
         {
           model: WagonTypeModel,
+        },
+        {
+          model: TrainModel,
         },
       ],
     });
@@ -23,22 +27,26 @@ exports.getWagons = async (req, res, next) => {
 exports.getAddNewWagon = async (req, res, next) => {
   try {
     const wagonTypes = await WagonTypeModel.findAll();
+    const trains = await TrainModel.findAll();
     res.render("pages/addwagon", {
       wagonTypes,
+      trains,
       title: "New wagon",
     });
   } catch (e) {
+    console.log(e);
     res.status(500).json(e);
   }
 };
 
 exports.postAddNewWagon = async (req, res, next) => {
   try {
-    const newWagon = Wagons.build({ ...req.body, trainId: 1 });
+    const newWagon = Wagons.build(req.body);
     await newWagon.validate();
     await newWagon.save();
     res.redirect("/wagons");
   } catch (e) {
+    console.log(e);
     res.status(500).json(e);
   }
 };
