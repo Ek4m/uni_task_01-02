@@ -1,0 +1,36 @@
+<%- include("../partials/metas")%> <%- include("../partials/header")%>
+<main>
+  <div class="table_container">
+    <h1>List of wagons</h1>
+    <a href="/wagons/add"><button>Add wagon</button></a>
+  </div>
+  <% if(data.length > 0){%>
+  <table>
+    <thead>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Duration</th>
+      <th>Created At</th>
+      <th>Updated At</th>
+      <th>Wagon Type</th>
+      <th>Options</th>
+    </thead>
+    <tbody>
+      <%data.forEach((elem) => {%>
+      <tr>
+        <td><%=elem.id%></td>
+        <td><%=elem.name%></td>
+        <td><%=new Date(elem.createdAt)%></td>
+        <td><%=new Date(elem.duration)%></td>
+        <td><%=new Date(elem.updatedAt)%></td>
+        <td><%=elem.wagontype ? elem.wagontype.name : "-"%></td>
+        <td><a href="/wagons/delete?id=<%=elem.id%>">Delete</a></td>
+      </tr>
+      <% })%>
+    </tbody>
+  </table>
+  <% }else{%>
+  <h1 class="no_elem">No Wagon types</h1>
+  <% }%>
+</main>
+<%- include("../partials/footer")%>
