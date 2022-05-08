@@ -1,0 +1,27 @@
+<%- include("../partials/metas")%> <%- include("../partials/header")%>
+<main>
+  <style>
+    .not_found_container {
+      width: 100vw;
+      height: calc(100vh - 250px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .not_found_container h1 {
+      font-size: 200px;
+      text-shadow: 0px 0px 10px rgb(255, 255, 255);
+    }
+    .not_found_container h2 {
+      font-weight: 500;
+      color: rgb(37, 37, 37);
+    }
+  </style>
+  <div class="not_found_container">
+    <h1>404</h1>
+    <h2>page not found</h2>
+  </div>
+</main>
+<%- include("../partials/footer")%>

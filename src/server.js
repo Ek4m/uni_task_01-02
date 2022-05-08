@@ -23,6 +23,12 @@ app.use("/warehouses", WarehouseRouter);
 app.use("/events", EventRouter);
 app.use("/trains", TrainRouter);
 
+app.get("*", (req, res, next) => {
+  res.render("pages/404", {
+    title: "Oops!!!",
+  });
+});
+
 /////////////////////Initialization
 dataBase.sync().then(() => {
   console.log("Connected to DB");
