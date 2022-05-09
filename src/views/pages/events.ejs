@@ -28,8 +28,8 @@
         <td><%=elem.endDate%></td>
         <td><%=elem.price%></td>
         <td class="status status_<%=elem.status%>"><p><%=elem.status%></p></td>
-        <td><%=elem.wagon.name%></td>
-        <td><%=elem.warehouse.name%></td>
+        <td><%=elem.wagon ? elem.wagon.name : "-"%></td>
+        <td><%=elem.warehouse ? elem.warehouse.name : "-"%></td>
         <td><%=new Date(elem.createdAt)%></td>
         <td><%=new Date(elem.updatedAt)%></td>
         <td><a href="/events/delete?id=<%=elem.id%>">Delete</a></td>

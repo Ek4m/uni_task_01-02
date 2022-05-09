@@ -10,9 +10,9 @@ body {
   min-height: 100vh;
   background: linear-gradient(
     to bottom right,
-    rgb(231, 137, 71),
+    rgb(255, 130, 41),
     rgb(232, 79, 79),
-    rgb(253, 58, 133)
+    rgb(255, 54, 9)
   );
 }
 

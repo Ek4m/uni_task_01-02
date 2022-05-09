@@ -34,8 +34,8 @@ form h1 {
 select {
   font-size: 1rem;
   padding: 10px 5px;
-  background-color: white;
   font-weight: lighter;
+  background-color: rgb(225, 225, 225);
   border: none;
   border-bottom: 1.5px solid rgb(255, 208, 121);
   transition: 0.2s ease 0s;
@@ -45,8 +45,8 @@ select {
 
 .form-group input:focus,
 .form-group select:focus {
-  background-color: rgb(225, 225, 225);
   outline: none;
+  background-color: white;
   border-bottom-color: red;
 }
 
@@ -61,10 +61,9 @@ select {
   border-radius: 5px;
   background: linear-gradient(
     to right,
-    rgb(92, 11, 92),
-    rgb(236, 72, 99),
     rgb(255, 106, 0),
-    red
+    red,
+    rgb(92, 11, 92)
   );
-  width: 100%;
+  width: 150px;
 }

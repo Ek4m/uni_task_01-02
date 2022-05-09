@@ -1,5 +1,5 @@
-const  connection = require("../initDb");
-const  { DataTypes } = require("sequelize");
+const connection = require("../initDb");
+const { DataTypes } = require("sequelize");
 
 const WarehouseModel = connection.define(
   "warehouse",
@@ -23,6 +23,9 @@ const WarehouseModel = connection.define(
     price: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      validate: {
+        min: 1,
+      },
     },
     capacity: {
       type: DataTypes.INTEGER,

@@ -19,6 +19,9 @@ const Event = connection.define(
     price: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      validate: {
+        min: 1,
+      },
     },
     status: {
       type: DataTypes.ENUM,

@@ -5,14 +5,7 @@ const WagonTypeModel = require("../db/models/WagonType");
 exports.getWagons = async (req, res, next) => {
   try {
     const wagons = await Wagons.findAll({
-      include: [
-        {
-          model: WagonTypeModel,
-        },
-        {
-          model: TrainModel,
-        },
-      ],
+      include: [{ model: WagonTypeModel }, { model: TrainModel }],
     });
     res.render("pages/wagons", {
       data: wagons,
