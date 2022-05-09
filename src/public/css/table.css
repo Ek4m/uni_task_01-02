@@ -67,6 +67,14 @@ td {
   font-weight: bold;
   border-radius: 4px;
 }
+
+tr img {
+  width: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  height: 150px;
+}
+
 .status_cancelled p {
   background-color: rgb(255, 33, 33);
 }

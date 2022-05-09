@@ -9,6 +9,7 @@
     <thead>
       <th>Id</th>
       <th>Name</th>
+      <th>Image</th>
       <th>Engine Type</th>
       <th>Color</th>
       <th>Created At</th>
@@ -20,6 +21,7 @@
       <tr>
         <td><%=elem.id%></td>
         <td><%=elem.name%></td>
+        <td><img src="/assets/<%=elem.image%>" alt="" /></td>
         <td><%=elem.enginetype ? elem.enginetype.name : "-"%></td>
         <td>
           <div

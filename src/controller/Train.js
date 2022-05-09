@@ -1,5 +1,7 @@
+const multer = require("multer");
 const EngineTypeModel = require("../db/models/EngineType");
 const TrainModel = require("../db/models/Train");
+const upload = require("../util/multer");
 
 exports.getAllTrains = async (req, res, next) => {
   try {
@@ -27,15 +29,25 @@ exports.getAddNewTrain = async (req, res) => {
   }
 };
 
-exports.postAddNewTrain = async (req, res) => {
-  try {
-    const newTrain = TrainModel.build(req.body);
-    await newTrain.validate();
-    await newTrain.save();
-    res.redirect("/trains");
-  } catch (e) {
-    next(e);
-  }
+exports.postAddNewTrain = async (req, res, next) => {
+  upload(req, res, async function (err) {
+    if (err instanceof multer.MulterError) {
+      next(err);
+    } else if (err) {
+      next(err);
+    }
+    try {
+      const newTrain = TrainModel.build({
+        ...req.body,
+        image: req.file ? req.file.filename : "default.jpg",
+      });
+      await newTrain.validate();
+      await newTrain.save();
+      res.redirect("/trains");
+    } catch (e) {
+      next(e);
+    }
+  });
 };
 
 exports.deleteTrain = async (req, res, next) => {

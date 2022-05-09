@@ -12,6 +12,10 @@ const TrainModel = connection.define(
       type: DataTypes.STRING,
       defaultValue: "#000000",
     },
+    image: {
+      type: DataTypes.STRING,
+      defaultValue: "default.jpg",
+    },
   },
   {
     timestamps: true,

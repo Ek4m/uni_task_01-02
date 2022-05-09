@@ -1,6 +1,6 @@
 <%- include("../partials/metas")%> <%- include("../partials/header")%>
 <main>
-  <form action="/trains/add" method="post">
+  <form action="/trains/add" method="post" enctype="multipart/form-data">
     <h1>Add new Train</h1>
     <div class="form-group">
       <label for="name">name</label>
@@ -17,6 +17,10 @@
     <div class="form-group">
       <label for="color">color</label>
       <input type="color" required id="color" name="color" />
+    </div>
+    <div class="form-group">
+      <label for="image">image</label>
+      <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png" />
     </div>
     <button id="submit">Submit</button>
   </form>
