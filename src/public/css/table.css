@@ -22,6 +22,7 @@
   text-transform: capitalize;
   border-radius: 10px;
   border: none;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -84,4 +85,12 @@ td {
 
 tbody {
   background-color: white;
+}
+
+.color_prop {
+  width: 100px;
+  border: 2px solid white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px 1px rgba(90, 90, 90, 0.395);
+  height: 30px;
 }

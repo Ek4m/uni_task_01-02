@@ -8,6 +8,10 @@ const TrainModel = connection.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    color: {
+      type: DataTypes.STRING,
+      defaultValue: "#000000",
+    },
   },
   {
     timestamps: true,

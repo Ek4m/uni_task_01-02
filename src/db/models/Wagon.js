@@ -14,12 +14,16 @@ const WagonModel = connection.define(
       type: DataTypes.DATE,
       allowNull: false,
     },
+    color: {
+      type: DataTypes.STRING,
+      defaultValue: "#000000",
+    },
   },
   {
     timestamps: true,
   }
 );
 WagonModel.belongsTo(WagonTypeModel, { foreignKey: "wagonType" });
-WagonModel.belongsTo(TrainModel,{foreignKey:"trainId"})
+WagonModel.belongsTo(TrainModel, { foreignKey: "trainId" });
 WagonModel.sync({ alter: true });
 module.exports = WagonModel;

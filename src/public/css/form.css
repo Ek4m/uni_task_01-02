@@ -67,3 +67,7 @@ select {
   );
   width: 150px;
 }
+
+.form-group input[type="color"]{
+  height: 50px;
+}

@@ -10,10 +10,11 @@
       <th>Id</th>
       <th>Name</th>
       <th>Duration</th>
+      <th>Wagon Type</th>
+      <th>Color</th>
+      <th>Train</th>
       <th>Created At</th>
       <th>Updated At</th>
-      <th>Wagon Type</th>
-      <th>Train</th>
       <th>Options</th>
     </thead>
     <tbody>
@@ -21,11 +22,17 @@
       <tr>
         <td><%=elem.id%></td>
         <td><%=elem.name%></td>
-        <td><%=new Date(elem.createdAt)%></td>
         <td><%=new Date(elem.duration)%></td>
-        <td><%=new Date(elem.updatedAt)%></td>
         <td><%=elem.wagontype ? elem.wagontype.name : "-"%></td>
+        <td>
+          <div
+            class="color_prop"
+            style="background-color: <%=elem.color%>"
+          ></div>
+        </td>
         <td><%=elem.train ? elem.train.name : "-"%></td>
+        <td><%=new Date(elem.createdAt)%></td>
+        <td><%=new Date(elem.updatedAt)%></td>
         <td><a href="/wagons/delete?id=<%=elem.id%>">Delete</a></td>
       </tr>
       <% })%>

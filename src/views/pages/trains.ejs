@@ -9,9 +9,10 @@
     <thead>
       <th>Id</th>
       <th>Name</th>
+      <th>Engine Type</th>
+      <th>Color</th>
       <th>Created At</th>
       <th>Updated At</th>
-      <th>Engine Type</th>
       <th>Options</th>
     </thead>
     <tbody>
@@ -19,9 +20,15 @@
       <tr>
         <td><%=elem.id%></td>
         <td><%=elem.name%></td>
+        <td><%=elem.enginetype ? elem.enginetype.name : "-"%></td>
+        <td>
+          <div
+            class="color_prop"
+            style="background-color: <%=elem.color%>"
+          ></div>
+        </td>
         <td><%=new Date(elem.createdAt)%></td>
         <td><%=new Date(elem.updatedAt)%></td>
-        <td><%=elem.enginetype ? elem.enginetype.name : "-"%></td>
         <td><a href="/trains/delete?id=<%=elem.id%>">Delete</a></td>
       </tr>
       <% })%>
